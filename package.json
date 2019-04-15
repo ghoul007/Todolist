@@ -4,7 +4,20 @@
     "description": "Todo list en temps reel",
     "main": "app.js",
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.js",
+        "pm2": "pm2 start app.js --name 'todo'  --watch ",
+        "pm2-log": "pm2 logs todo ",
+        "pm2-delete": "pm2 delete todo",
+        "pm2-clean": "pm2 delete all",
+        "pm2-start": "pm2 start todo",
+        "pm2-stop": "pm2 stop todo",
+        "pm2-restart": "pm2 restart todo",
+        "pm2-ls": "pm2 ls todo",
+        "pm2-monit": "pm2 monit",
+        "pm2-cluster": "pm2 start app.js --name 'todo' -i 4",
+        "pm2-scale": "pm2 scale todo 4",
+        "pm2-imonit": "pm2 imonit",
+        "stress": "artillery quick -d 10 -r 100 -n 20 http://127.0.0.1:8086"
     },
     "author": "Ahmed GHOUL",
     "license": "ISC",
